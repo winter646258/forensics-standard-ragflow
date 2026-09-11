@@ -1,0 +1,519 @@
+{
+  "summary": {
+    "cards": 85,
+    "with_detail": 15,
+    "catalog_only": 70
+  },
+  "cards": [
+    {
+      "file": "gb-t-29360-2023.md",
+      "standard_id": "GB/T 29360-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "gb-t-29361-2023.md",
+      "standard_id": "GB/T 29361-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "gb-t-29362-2023.md",
+      "standard_id": "GB/T 29362-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "gb-t-39321-2020.md",
+      "standard_id": "GB/T 39321-2020",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "gb-t-31500-2024.md",
+      "standard_id": "GB/T 31500-2024",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-754-2008.md",
+      "standard_id": "GA/T 754-2008",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-755-2008.md",
+      "standard_id": "GA/T 755-2008",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-757-2008.md",
+      "standard_id": "GA/T 757-2008",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-828-2009.md",
+      "standard_id": "GA/T 828-2009",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-829-2009.md",
+      "standard_id": "GA/T 829-2009",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-976-2012.md",
+      "standard_id": "GA/T 976-2012",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-977-2012.md",
+      "standard_id": "GA/T 977-2012",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-978-2012.md",
+      "standard_id": "GA/T 978-2012",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1170-2014.md",
+      "standard_id": "GA/T 1170-2014",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1171-2014.md",
+      "standard_id": "GA/T 1171-2014",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1172-2014.md",
+      "standard_id": "GA/T 1172-2014",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1173-2014.md",
+      "standard_id": "GA/T 1173-2014",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1174-2014.md",
+      "standard_id": "GA/T 1174-2014",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1175-2014.md",
+      "standard_id": "GA/T 1175-2014",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1176-2014.md",
+      "standard_id": "GA/T 1176-2014",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1474-2018.md",
+      "standard_id": "GA/T 1474-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1475-2018.md",
+      "standard_id": "GA/T 1475-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1476-2018.md",
+      "standard_id": "GA/T 1476-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1477-2018.md",
+      "standard_id": "GA/T 1477-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1478-2018.md",
+      "standard_id": "GA/T 1478-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1479-2018.md",
+      "standard_id": "GA/T 1479-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1480-2018.md",
+      "standard_id": "GA/T 1480-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1554-2019.md",
+      "standard_id": "GA/T 1554-2019",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1564-2019.md",
+      "standard_id": "GA/T 1564-2019",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1568-2019.md",
+      "standard_id": "GA/T 1568-2019",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1569-2019.md",
+      "standard_id": "GA/T 1569-2019",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1570-2019.md",
+      "standard_id": "GA/T 1570-2019",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1571-2019.md",
+      "standard_id": "GA/T 1571-2019",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1572-2019.md",
+      "standard_id": "GA/T 1572-2019",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1663-2019.md",
+      "standard_id": "GA/T 1663-2019",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1664-2019.md",
+      "standard_id": "GA/T 1664-2019",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1713-2020.md",
+      "standard_id": "GA/T 1713-2020",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-756-2021.md",
+      "standard_id": "GA/T 756-2021",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1966-2021.md",
+      "standard_id": "GA/T 1966-2021",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1069-2021.md",
+      "standard_id": "GA/T 1069-2021",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1070-2021.md",
+      "standard_id": "GA/T 1070-2021",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1071-2021.md",
+      "standard_id": "GA/T 1071-2021",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1977-2022.md",
+      "standard_id": "GA/T 1977-2022",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1981-2022.md",
+      "standard_id": "GA/T 1981-2022",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1982-2022.md",
+      "standard_id": "GA/T 1982-2022",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-1998-2022.md",
+      "standard_id": "GA/T 1998-2022",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-2134-2024.md",
+      "standard_id": "GA/T 2134-2024",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-2136-2024.md",
+      "standard_id": "GA/T 2136-2024",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-2341-2025.md",
+      "standard_id": "GA/T 2341-2025",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-2343-2025.md",
+      "standard_id": "GA/T 2343-2025",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0400001-2014.md",
+      "standard_id": "SF/Z JD0400001-2014",
+      "has_detail": true,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0401001-2014.md",
+      "standard_id": "SF/Z JD0401001-2014",
+      "has_detail": true,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0400002-2015.md",
+      "standard_id": "SF/Z JD0400002-2015",
+      "has_detail": true,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0402001-2015.md",
+      "standard_id": "SF/Z JD0402001-2015",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0402002-2015.md",
+      "standard_id": "SF/Z JD0402002-2015",
+      "has_detail": true,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0403002-2015.md",
+      "standard_id": "SF/Z JD0403002-2015",
+      "has_detail": true,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0403003-2015.md",
+      "standard_id": "SF/Z JD0403003-2015",
+      "has_detail": true,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0300002-2018.md",
+      "standard_id": "SF/Z JD0300002-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0402004-2018.md",
+      "standard_id": "SF/Z JD0402004-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0403004-2018.md",
+      "standard_id": "SF/Z JD0403004-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0404001-2018.md",
+      "standard_id": "SF/Z JD0404001-2018",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0075-2020.md",
+      "standard_id": "SF/T 0075-2020",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0076-2020.md",
+      "standard_id": "SF/T 0076-2020",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0077-2020.md",
+      "standard_id": "SF/T 0077-2020",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0078-2020.md",
+      "standard_id": "SF/T 0078-2020",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0104-2021.md",
+      "standard_id": "SF/T 0104-2021",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0105-2021.md",
+      "standard_id": "SF/T 0105-2021",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0119-2021.md",
+      "standard_id": "SF/T 0119-2021",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0143-2023.md",
+      "standard_id": "SF/T 0143-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0144-2023.md",
+      "standard_id": "SF/T 0144-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0145-2023.md",
+      "standard_id": "SF/T 0145-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0146-2023.md",
+      "standard_id": "SF/T 0146-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0156-2023.md",
+      "standard_id": "SF/T 0156-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0157-2023.md",
+      "standard_id": "SF/T 0157-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0158-2023.md",
+      "standard_id": "SF/T 0158-2023",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-t-0181-2024.md",
+      "standard_id": "SF/T 0181-2024",
+      "has_detail": false,
+      "status": "待权威核验"
+    },
+    {
+      "file": "sf-z-jd0402001-2014.md",
+      "standard_id": "SF/Z JD0402001-2014",
+      "has_detail": true,
+      "status": "已被代替"
+    },
+    {
+      "file": "sf-z-jd0403001-2014.md",
+      "standard_id": "SF/Z JD0403001-2014",
+      "has_detail": true,
+      "status": "已被代替"
+    },
+    {
+      "file": "sf-z-jd0300002-2015.md",
+      "standard_id": "SF/Z JD0300002-2015",
+      "has_detail": true,
+      "status": "推荐适用"
+    },
+    {
+      "file": "sf-z-jd0301002-2015.md",
+      "standard_id": "SF/Z JD0301002-2015",
+      "has_detail": true,
+      "status": "推荐适用"
+    },
+    {
+      "file": "sf-z-jd0301003-2015.md",
+      "standard_id": "SF/Z JD0301003-2015",
+      "has_detail": true,
+      "status": "已被代替"
+    },
+    {
+      "file": "sf-z-jd0302001-2015.md",
+      "standard_id": "SF/Z JD0302001-2015",
+      "has_detail": true,
+      "status": "推荐适用"
+    },
+    {
+      "file": "sf-z-jd0302002-2015.md",
+      "standard_id": "SF/Z JD0302002-2015",
+      "has_detail": true,
+      "status": "推荐适用"
+    },
+    {
+      "file": "sf-z-jd0401002-2015.md",
+      "standard_id": "SF/Z JD0401002-2015",
+      "has_detail": true,
+      "status": "已被代替"
+    },
+    {
+      "file": "sf-z-jd0402003-2015.md",
+      "standard_id": "SF/Z JD0402003-2015",
+      "has_detail": true,
+      "status": "推荐适用"
+    }
+  ]
+}
