@@ -1,0 +1,57 @@
+{
+  "document_id": "sf-z-jd0400001-2014",
+  "standard_id": "SF/Z JD0400001-2014",
+  "title": "电子数据司法鉴定通用实施规范",
+  "standard_level": "司法鉴定技术规范",
+  "status": "推荐适用",
+  "supersedes": "",
+  "published_date": "2014-03-17",
+  "effective_date": "2014-03-17",
+  "notice": "司办通[2014]15号",
+  "source_url": "https://www.moj.gov.cn/pub/sfbgw/zwxxgk/fdzdgknr/fdzdgknrtzwj/202103/t20210316_207512.html",
+  "source_evidence": "司法部官网通知附件 + SHA-256",
+  "body_status": "正文已获取",
+  "review_status": "可导入",
+  "primary_recommendation": true,
+  "stage_tags": [
+    "收集",
+    "固定",
+    "保全",
+    "数据检验",
+    "报告呈现"
+  ],
+  "object_tags": [
+    "电子数据",
+    "文件",
+    "存储介质"
+  ],
+  "action_tags": [
+    "提取",
+    "复制",
+    "哈希校验",
+    "真实性检验"
+  ],
+  "scenario_tags": [
+    "电子数据司法鉴定",
+    "通用流程"
+  ],
+  "scope_summary": "以官方正文的目的、范围和条款为准；本字段不替代人工适用性判断。",
+  "clause_refs": "见正文切片关联文件；条款级引用仍需人工复核转换质量。",
+  "source_pdf": "个人总库/电子取证开源项目标准匹配/04-司法鉴定技术规范/SF-Z/2014/SF-Z-JD0400001-2014-电子数据司法鉴定通用实施规范.pdf",
+  "source_markdown": "ragflow-import/01-正文Markdown/SF-Z-JD0400001-2014-电子数据司法鉴定通用实施规范.md",
+  "sha256_pdf": "132C16020CF9A8C6AEE550EB48A0528F94576EDD7E9B9E7B9632FD863A025C0C",
+  "sha256_markdown": "C8216F00D53A6BC00FAC78C9E8BA9E5548FF4F5AAB10A4B803B383CFAF3995E2",
+  "chunk_count": 5,
+  "chunk_ids": [
+    "sf-z-jd0400001-2014::chunk-001",
+    "sf-z-jd0400001-2014::chunk-002",
+    "sf-z-jd0400001-2014::chunk-003",
+    "sf-z-jd0400001-2014::chunk-004",
+    "sf-z-jd0400001-2014::chunk-005"
+  ],
+  "qa_status": "通过机械检查；需抽查版式",
+  "qa_flags": [],
+  "qa_observations": [
+    "含表格线性化"
+  ]
+}

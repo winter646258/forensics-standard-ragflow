@@ -1,0 +1,369 @@
+[
+  {
+    "document_id": "sf-z-jd0400001-2014",
+    "standard_id": "SF/Z JD0400001-2014",
+    "title": "电子数据司法鉴定通用实施规范",
+    "pdf_pages": 10,
+    "pdf_text_chars": 5989,
+    "markdown_chars": 5639,
+    "markdown_lines": 150,
+    "chunk_count": 5,
+    "low_text_pdf_pages": [],
+    "pdf_first_text_anchor": "",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.533,
+    "length_ratio_markdown_to_pdf": 0.989,
+    "similarity_ratio": 0.971,
+    "flags": [],
+    "observations": [
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0401001-2014",
+    "standard_id": "SF/Z JD0401001-2014",
+    "title": "电子数据复制设备鉴定实施规范",
+    "pdf_pages": 11,
+    "pdf_text_chars": 5987,
+    "markdown_chars": 5625,
+    "markdown_lines": 136,
+    "chunk_count": 6,
+    "low_text_pdf_pages": [
+      2,
+      6
+    ],
+    "pdf_first_text_anchor": "",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.519,
+    "length_ratio_markdown_to_pdf": 0.996,
+    "similarity_ratio": 0.976,
+    "flags": [],
+    "observations": [
+      "PDF低文本页需视觉复核:2,6",
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0402001-2014",
+    "standard_id": "SF/Z JD0402001-2014",
+    "title": "电子邮件鉴定实施规范",
+    "pdf_pages": 8,
+    "pdf_text_chars": 3702,
+    "markdown_chars": 3737,
+    "markdown_lines": 165,
+    "chunk_count": 4,
+    "low_text_pdf_pages": [
+      1,
+      2
+    ],
+    "pdf_first_text_anchor": "",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.556,
+    "length_ratio_markdown_to_pdf": 1.048,
+    "similarity_ratio": 0.974,
+    "flags": [],
+    "observations": [
+      "PDF低文本页需视觉复核:1,2",
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0403001-2014",
+    "standard_id": "SF/Z JD0403001-2014",
+    "title": "软件相似性鉴定实施规范",
+    "pdf_pages": 7,
+    "pdf_text_chars": 3608,
+    "markdown_chars": 3498,
+    "markdown_lines": 131,
+    "chunk_count": 4,
+    "low_text_pdf_pages": [
+      1
+    ],
+    "pdf_first_text_anchor": "",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.444,
+    "length_ratio_markdown_to_pdf": 1.011,
+    "similarity_ratio": 0.959,
+    "flags": [],
+    "observations": [
+      "PDF低文本页需视觉复核:1",
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0300002-2015",
+    "standard_id": "SF/Z JD0300002-2015",
+    "title": "音像制品同源性鉴定技术规范",
+    "pdf_pages": 7,
+    "pdf_text_chars": 4188,
+    "markdown_chars": 4086,
+    "markdown_lines": 99,
+    "chunk_count": 4,
+    "low_text_pdf_pages": [
+      7
+    ],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.5,
+    "length_ratio_markdown_to_pdf": 1.018,
+    "similarity_ratio": 0.986,
+    "flags": [],
+    "observations": [
+      "PDF低文本页需视觉复核:7",
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0301002-2015",
+    "standard_id": "SF/Z JD0301002-2015",
+    "title": "录音设备鉴定技术规范",
+    "pdf_pages": 6,
+    "pdf_text_chars": 3389,
+    "markdown_chars": 3460,
+    "markdown_lines": 102,
+    "chunk_count": 3,
+    "low_text_pdf_pages": [
+      1
+    ],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.533,
+    "length_ratio_markdown_to_pdf": 1.053,
+    "similarity_ratio": 0.96,
+    "flags": [],
+    "observations": [
+      "PDF低文本页需视觉复核:1",
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0301003-2015",
+    "standard_id": "SF/Z JD0301003-2015",
+    "title": "录音资料处理技术规范",
+    "pdf_pages": 6,
+    "pdf_text_chars": 3733,
+    "markdown_chars": 3769,
+    "markdown_lines": 106,
+    "chunk_count": 4,
+    "low_text_pdf_pages": [
+      1
+    ],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.667,
+    "length_ratio_markdown_to_pdf": 1.031,
+    "similarity_ratio": 0.974,
+    "flags": [],
+    "observations": [
+      "PDF低文本页需视觉复核:1"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0302001-2015",
+    "standard_id": "SF/Z JD0302001-2015",
+    "title": "图像真实性鉴定技术规范",
+    "pdf_pages": 8,
+    "pdf_text_chars": 5068,
+    "markdown_chars": 5095,
+    "markdown_lines": 149,
+    "chunk_count": 5,
+    "low_text_pdf_pages": [],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.5,
+    "length_ratio_markdown_to_pdf": 1.026,
+    "similarity_ratio": 0.977,
+    "flags": [],
+    "observations": [],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0302002-2015",
+    "standard_id": "SF/Z JD0302002-2015",
+    "title": "图像资料处理技术规范",
+    "pdf_pages": 6,
+    "pdf_text_chars": 4124,
+    "markdown_chars": 4150,
+    "markdown_lines": 116,
+    "chunk_count": 4,
+    "low_text_pdf_pages": [
+      1
+    ],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.6,
+    "length_ratio_markdown_to_pdf": 1.028,
+    "similarity_ratio": 0.976,
+    "flags": [],
+    "observations": [
+      "PDF低文本页需视觉复核:1"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0400002-2015",
+    "standard_id": "SF/Z JD0400002-2015",
+    "title": "电子数据证据现场获取通用规范",
+    "pdf_pages": 6,
+    "pdf_text_chars": 4408,
+    "markdown_chars": 4423,
+    "markdown_lines": 76,
+    "chunk_count": 4,
+    "low_text_pdf_pages": [],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.5,
+    "length_ratio_markdown_to_pdf": 1.03,
+    "similarity_ratio": 0.962,
+    "flags": [],
+    "observations": [
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0401002-2015",
+    "standard_id": "SF/Z JD0401002-2015",
+    "title": "手机电子数据提取操作规范",
+    "pdf_pages": 7,
+    "pdf_text_chars": 5192,
+    "markdown_chars": 5045,
+    "markdown_lines": 100,
+    "chunk_count": 5,
+    "low_text_pdf_pages": [],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.429,
+    "length_ratio_markdown_to_pdf": 1.029,
+    "similarity_ratio": 0.975,
+    "flags": [],
+    "observations": [
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0402002-2015",
+    "standard_id": "SF/Z JD0402002-2015",
+    "title": "数据库数据真实性鉴定规范",
+    "pdf_pages": 6,
+    "pdf_text_chars": 3295,
+    "markdown_chars": 3270,
+    "markdown_lines": 73,
+    "chunk_count": 3,
+    "low_text_pdf_pages": [
+      6
+    ],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.533,
+    "length_ratio_markdown_to_pdf": 1.024,
+    "similarity_ratio": 0.983,
+    "flags": [],
+    "observations": [
+      "PDF低文本页需视觉复核:6",
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0402003-2015",
+    "standard_id": "SF/Z JD0402003-2015",
+    "title": "即时通讯记录检验操作规范",
+    "pdf_pages": 7,
+    "pdf_text_chars": 4596,
+    "markdown_chars": 4548,
+    "markdown_lines": 93,
+    "chunk_count": 4,
+    "low_text_pdf_pages": [],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.571,
+    "length_ratio_markdown_to_pdf": 1.018,
+    "similarity_ratio": 0.984,
+    "flags": [],
+    "observations": [
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0403002-2015",
+    "standard_id": "SF/Z JD0403002-2015",
+    "title": "破坏性程序检验操作规范",
+    "pdf_pages": 7,
+    "pdf_text_chars": 4995,
+    "markdown_chars": 4869,
+    "markdown_lines": 87,
+    "chunk_count": 4,
+    "low_text_pdf_pages": [],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.571,
+    "length_ratio_markdown_to_pdf": 1.016,
+    "similarity_ratio": 0.986,
+    "flags": [],
+    "observations": [
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  },
+  {
+    "document_id": "sf-z-jd0403003-2015",
+    "standard_id": "SF/Z JD0403003-2015",
+    "title": "计算机系统用户操作行为检验规范",
+    "pdf_pages": 7,
+    "pdf_text_chars": 4633,
+    "markdown_chars": 4532,
+    "markdown_lines": 115,
+    "chunk_count": 4,
+    "low_text_pdf_pages": [],
+    "pdf_first_text_anchor": "前言",
+    "title_match": true,
+    "standard_id_match": true,
+    "last_page_anchor_match": true,
+    "anchor_coverage": 0.429,
+    "length_ratio_markdown_to_pdf": 1.012,
+    "similarity_ratio": 0.939,
+    "flags": [],
+    "observations": [
+      "含表格线性化"
+    ],
+    "qa_status": "通过机械检查；需抽查版式"
+  }
+]

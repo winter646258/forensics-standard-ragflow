@@ -1,0 +1,52 @@
+{
+  "document_id": "sf-z-jd0402001-2014",
+  "standard_id": "SF/Z JD0402001-2014",
+  "title": "电子邮件鉴定实施规范",
+  "standard_level": "司法鉴定技术规范",
+  "status": "已被代替",
+  "supersedes": "SF/T 0156-2023",
+  "published_date": "2014-03-17",
+  "effective_date": "2014-03-17",
+  "notice": "司办通[2014]15号",
+  "source_url": "https://www.moj.gov.cn/pub/sfbgw/zwxxgk/fdzdgknr/fdzdgknrtzwj/202103/t20210316_207512.html",
+  "source_evidence": "司法部官网通知附件 + SHA-256",
+  "body_status": "正文已获取",
+  "review_status": "追溯导入",
+  "primary_recommendation": false,
+  "stage_tags": [
+    "数据检验",
+    "真实性检验",
+    "报告呈现"
+  ],
+  "object_tags": [
+    "文件",
+    "云端数据"
+  ],
+  "action_tags": [
+    "真实性检验",
+    "哈希校验"
+  ],
+  "scenario_tags": [
+    "电子邮件",
+    "邮件真实性"
+  ],
+  "scope_summary": "以官方正文的目的、范围和条款为准；本字段不替代人工适用性判断。",
+  "clause_refs": "见正文切片关联文件；条款级引用仍需人工复核转换质量。",
+  "source_pdf": "个人总库/电子取证开源项目标准匹配/04-司法鉴定技术规范/SF-Z/2014/SF-Z-JD0402001-2014-电子邮件鉴定实施规范.pdf",
+  "source_markdown": "ragflow-import/01-正文Markdown/SF-Z-JD0402001-2014-电子邮件鉴定实施规范.md",
+  "sha256_pdf": "20BA5341116B6EC8DE9565BAF5DFF14A68685B3E1285FAC55D73DF67E2BFB75C",
+  "sha256_markdown": "40F10F15D739804FC83EF85F7D2C5A1A1526186D606607592915CE12C3EABE56",
+  "chunk_count": 4,
+  "chunk_ids": [
+    "sf-z-jd0402001-2014::chunk-001",
+    "sf-z-jd0402001-2014::chunk-002",
+    "sf-z-jd0402001-2014::chunk-003",
+    "sf-z-jd0402001-2014::chunk-004"
+  ],
+  "qa_status": "通过机械检查；需抽查版式",
+  "qa_flags": [],
+  "qa_observations": [
+    "PDF低文本页需视觉复核:1,2",
+    "含表格线性化"
+  ]
+}

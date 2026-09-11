@@ -1,0 +1,51 @@
+{
+  "document_id": "sf-z-jd0301003-2015",
+  "standard_id": "SF/Z JD0301003-2015",
+  "title": "录音资料处理技术规范",
+  "standard_level": "司法鉴定技术规范",
+  "status": "已被代替",
+  "supersedes": "SF/T 0151-2023",
+  "published_date": "2015-11-20",
+  "effective_date": "2015-11-20",
+  "notice": "司办通[2015]65号",
+  "source_url": "https://www.moj.gov.cn/pub/sfbgwapp/zwgk/tzggApp/202105/t20210517_395425.html",
+  "source_evidence": "司法部官网通知附件 + SHA-256",
+  "body_status": "正文已获取",
+  "review_status": "追溯导入",
+  "primary_recommendation": false,
+  "stage_tags": [
+    "数据检验",
+    "报告呈现"
+  ],
+  "object_tags": [
+    "文件",
+    "录音资料"
+  ],
+  "action_tags": [
+    "处理",
+    "降噪",
+    "格式转换"
+  ],
+  "scenario_tags": [
+    "录音处理",
+    "音频增强"
+  ],
+  "scope_summary": "以官方正文的目的、范围和条款为准；本字段不替代人工适用性判断。",
+  "clause_refs": "见正文切片关联文件；条款级引用仍需人工复核转换质量。",
+  "source_pdf": "个人总库/电子取证开源项目标准匹配/04-司法鉴定技术规范/SF-Z/2015/SF-Z-JD0301003-2015-录音资料处理技术规范.pdf",
+  "source_markdown": "ragflow-import/01-正文Markdown/SF-Z-JD0301003-2015-录音资料处理技术规范.md",
+  "sha256_pdf": "14366ACB5C9F429B9B6C1F0CCBF865ED5E381AF8232EA4894D02EFFD804994FA",
+  "sha256_markdown": "27245FB4B4A20FDA3C4263CB1B4D4AED77010FAF7E76323A01443939D1CBCCB6",
+  "chunk_count": 4,
+  "chunk_ids": [
+    "sf-z-jd0301003-2015::chunk-001",
+    "sf-z-jd0301003-2015::chunk-002",
+    "sf-z-jd0301003-2015::chunk-003",
+    "sf-z-jd0301003-2015::chunk-004"
+  ],
+  "qa_status": "通过机械检查；需抽查版式",
+  "qa_flags": [],
+  "qa_observations": [
+    "PDF低文本页需视觉复核:1"
+  ]
+}

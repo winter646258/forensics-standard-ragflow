@@ -1,0 +1,54 @@
+{
+  "document_id": "sf-z-jd0401002-2015",
+  "standard_id": "SF/Z JD0401002-2015",
+  "title": "手机电子数据提取操作规范",
+  "standard_level": "司法鉴定技术规范",
+  "status": "已被代替",
+  "supersedes": "SF/T 0157-2023",
+  "published_date": "2015-11-20",
+  "effective_date": "2015-11-20",
+  "notice": "司办通[2015]65号",
+  "source_url": "https://www.moj.gov.cn/pub/sfbgwapp/zwgk/tzggApp/202105/t20210517_395425.html",
+  "source_evidence": "司法部官网通知附件 + SHA-256",
+  "body_status": "正文已获取",
+  "review_status": "追溯导入",
+  "primary_recommendation": false,
+  "stage_tags": [
+    "现场提取",
+    "收集",
+    "数据检验"
+  ],
+  "object_tags": [
+    "手机",
+    "移动终端",
+    "存储芯片"
+  ],
+  "action_tags": [
+    "提取",
+    "复制",
+    "哈希校验"
+  ],
+  "scenario_tags": [
+    "手机取证",
+    "移动终端"
+  ],
+  "scope_summary": "以官方正文的目的、范围和条款为准；本字段不替代人工适用性判断。",
+  "clause_refs": "见正文切片关联文件；条款级引用仍需人工复核转换质量。",
+  "source_pdf": "个人总库/电子取证开源项目标准匹配/04-司法鉴定技术规范/SF-Z/2015/SF-Z-JD0401002-2015-手机电子数据提取操作规范.pdf",
+  "source_markdown": "ragflow-import/01-正文Markdown/SF-Z-JD0401002-2015-手机电子数据提取操作规范.md",
+  "sha256_pdf": "C7369B0532D4344D39E309FDE1E51F02E0966361868445D8D249AB2BE4956024",
+  "sha256_markdown": "79729E16664EBB2776B2C54771E80D51A4F194583C552AAA1D144C24F9F074C3",
+  "chunk_count": 5,
+  "chunk_ids": [
+    "sf-z-jd0401002-2015::chunk-001",
+    "sf-z-jd0401002-2015::chunk-002",
+    "sf-z-jd0401002-2015::chunk-003",
+    "sf-z-jd0401002-2015::chunk-004",
+    "sf-z-jd0401002-2015::chunk-005"
+  ],
+  "qa_status": "通过机械检查；需抽查版式",
+  "qa_flags": [],
+  "qa_observations": [
+    "含表格线性化"
+  ]
+}

@@ -1,0 +1,53 @@
+services:
+  es01:
+    ports: !reset []
+    environment:
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
+
+  mysql:
+    ports: !reset []
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+
+  minio:
+    ports: !reset []
+    environment:
+      MINIO_ROOT_USER: ${MINIO_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_PASSWORD}
+
+  redis:
+    ports: !reset []
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+
+  ragflow-cpu:
+    # Docker's embedded resolver forwards to the VM gateway (192.168.65.7),
+    # which flaps on this machine and breaks calls to cloud model APIs.
+    # Point the embedded resolver at public DNS servers instead.
+    dns:
+      - 223.5.5.5
+      - 119.29.29.29
+    ports: !override
+      - 127.0.0.1:8081:80
+    environment:
+      DB_TYPE: ${DB_TYPE}
+      DOC_ENGINE: ${DOC_ENGINE}
+      DEVICE: ${DEVICE}
+      METADATA_DB_PROFILE: ${METADATA_DB_PROFILE}
+      COMPOSE_PROFILES: ${COMPOSE_PROFILES}
+      ES_HOST: ${ES_HOST}
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DBNAME: ${MYSQL_DBNAME}
+      MINIO_HOST: ${MINIO_HOST}
+      MINIO_USER: ${MINIO_USER}
+      MINIO_PASSWORD: ${MINIO_PASSWORD}
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      RAGFLOW_HOST: ${RAGFLOW_HOST}
+      SVR_HTTP_PORT: ${SVR_HTTP_PORT}
+      TZ: ${TZ}

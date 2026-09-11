@@ -1,0 +1,23 @@
+# Local runtime and temporary output
+tmp/
+**/__pycache__/
+**/*.pyc
+.venv/
+venv/
+
+# Deployment secrets and local service state
+ragflow-deploy/.env.local
+ragflow-deploy/.env.*.local
+ragflow-deploy/ragflow-logs/
+
+# Standard full text is kept in the local/private vault, not the public repo
+ragflow-import/01-正文Markdown/
+ragflow-import/01-正文Markdown-清洗版/
+ragflow-import/01-正文Markdown-重转/
+ragflow-import/*.pdf
+
+# Chunk records embed clause text from the standards; keep them local only.
+ragflow-import/03-正文切片关联.jsonl
+
+# Local validation reports may contain machine-specific paths
+ragflow-import/07-导入资产验收*.json

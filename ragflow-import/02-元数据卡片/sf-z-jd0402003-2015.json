@@ -1,0 +1,53 @@
+{
+  "document_id": "sf-z-jd0402003-2015",
+  "standard_id": "SF/Z JD0402003-2015",
+  "title": "即时通讯记录检验操作规范",
+  "standard_level": "司法鉴定技术规范",
+  "status": "推荐适用",
+  "supersedes": "",
+  "published_date": "2015-11-20",
+  "effective_date": "2015-11-20",
+  "notice": "司办通[2015]65号",
+  "source_url": "https://www.moj.gov.cn/pub/sfbgwapp/zwgk/tzggApp/202105/t20210517_395425.html",
+  "source_evidence": "司法部官网通知附件 + SHA-256",
+  "body_status": "正文已获取",
+  "review_status": "可导入",
+  "primary_recommendation": true,
+  "stage_tags": [
+    "数据检验",
+    "真实性检验",
+    "报告呈现"
+  ],
+  "object_tags": [
+    "手机",
+    "移动终端",
+    "文件"
+  ],
+  "action_tags": [
+    "真实性检验",
+    "哈希校验",
+    "关联分析"
+  ],
+  "scenario_tags": [
+    "即时通讯",
+    "聊天记录"
+  ],
+  "scope_summary": "以官方正文的目的、范围和条款为准；本字段不替代人工适用性判断。",
+  "clause_refs": "见正文切片关联文件；条款级引用仍需人工复核转换质量。",
+  "source_pdf": "个人总库/电子取证开源项目标准匹配/04-司法鉴定技术规范/SF-Z/2015/SF-Z-JD0402003-2015-即时通讯记录检验操作规范.pdf",
+  "source_markdown": "ragflow-import/01-正文Markdown/SF-Z-JD0402003-2015-即时通讯记录检验操作规范.md",
+  "sha256_pdf": "DD0936E94DBB0C05B72A62B5F35462341DC975B4106870CBC4F78788AAAC9378",
+  "sha256_markdown": "F85FF407B1DA84657368A79B558E5CD150E835FB1B95F3D21AB7A296CA469170",
+  "chunk_count": 4,
+  "chunk_ids": [
+    "sf-z-jd0402003-2015::chunk-001",
+    "sf-z-jd0402003-2015::chunk-002",
+    "sf-z-jd0402003-2015::chunk-003",
+    "sf-z-jd0402003-2015::chunk-004"
+  ],
+  "qa_status": "通过机械检查；需抽查版式",
+  "qa_flags": [],
+  "qa_observations": [
+    "含表格线性化"
+  ]
+}

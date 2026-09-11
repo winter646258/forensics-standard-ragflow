@@ -1,0 +1,54 @@
+{
+  "document_id": "sf-z-jd0401001-2014",
+  "standard_id": "SF/Z JD0401001-2014",
+  "title": "电子数据复制设备鉴定实施规范",
+  "standard_level": "司法鉴定技术规范",
+  "status": "推荐适用",
+  "supersedes": "",
+  "published_date": "2014-03-17",
+  "effective_date": "2014-03-17",
+  "notice": "司办通[2014]15号",
+  "source_url": "https://www.moj.gov.cn/pub/sfbgw/zwxxgk/fdzdgknr/fdzdgknrtzwj/202103/t20210316_207512.html",
+  "source_evidence": "司法部官网通知附件 + SHA-256",
+  "body_status": "正文已获取",
+  "review_status": "可导入",
+  "primary_recommendation": true,
+  "stage_tags": [
+    "固定",
+    "数据检验"
+  ],
+  "object_tags": [
+    "复制设备",
+    "存储介质"
+  ],
+  "action_tags": [
+    "复制",
+    "哈希校验",
+    "写保护"
+  ],
+  "scenario_tags": [
+    "电子数据复制设备鉴定",
+    "工具验证"
+  ],
+  "scope_summary": "以官方正文的目的、范围和条款为准；本字段不替代人工适用性判断。",
+  "clause_refs": "见正文切片关联文件；条款级引用仍需人工复核转换质量。",
+  "source_pdf": "个人总库/电子取证开源项目标准匹配/04-司法鉴定技术规范/SF-Z/2014/SF-Z-JD0401001-2014-电子数据复制设备鉴定实施规范.pdf",
+  "source_markdown": "ragflow-import/01-正文Markdown/SF-Z-JD0401001-2014-电子数据复制设备鉴定实施规范.md",
+  "sha256_pdf": "F4ADB4EAC47FB1129B615683ED2B0C35C8BB970AEEF8FE5B02C0D6830A720FCA",
+  "sha256_markdown": "FD64E8AE960F39C3C457867716721876DE69820DF02E0EE441CA1E7481655A29",
+  "chunk_count": 6,
+  "chunk_ids": [
+    "sf-z-jd0401001-2014::chunk-001",
+    "sf-z-jd0401001-2014::chunk-002",
+    "sf-z-jd0401001-2014::chunk-003",
+    "sf-z-jd0401001-2014::chunk-004",
+    "sf-z-jd0401001-2014::chunk-005",
+    "sf-z-jd0401001-2014::chunk-006"
+  ],
+  "qa_status": "通过机械检查；需抽查版式",
+  "qa_flags": [],
+  "qa_observations": [
+    "PDF低文本页需视觉复核:2,6",
+    "含表格线性化"
+  ]
+}

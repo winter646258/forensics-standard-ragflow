@@ -1,0 +1,51 @@
+{
+  "document_id": "sf-z-jd0403001-2014",
+  "standard_id": "SF/Z JD0403001-2014",
+  "title": "软件相似性鉴定实施规范",
+  "standard_level": "司法鉴定技术规范",
+  "status": "已被代替",
+  "supersedes": "SF/T 0158-2023",
+  "published_date": "2014-03-17",
+  "effective_date": "2014-03-17",
+  "notice": "司办通[2014]15号",
+  "source_url": "https://www.moj.gov.cn/pub/sfbgw/zwxxgk/fdzdgknr/fdzdgknrtzwj/202103/t20210316_207512.html",
+  "source_evidence": "司法部官网通知附件 + SHA-256",
+  "body_status": "正文已获取",
+  "review_status": "追溯导入",
+  "primary_recommendation": false,
+  "stage_tags": [
+    "数据检验",
+    "报告呈现"
+  ],
+  "object_tags": [
+    "文件",
+    "计算机"
+  ],
+  "action_tags": [
+    "相似性检验",
+    "哈希校验"
+  ],
+  "scenario_tags": [
+    "软件相似性",
+    "代码比对"
+  ],
+  "scope_summary": "以官方正文的目的、范围和条款为准；本字段不替代人工适用性判断。",
+  "clause_refs": "见正文切片关联文件；条款级引用仍需人工复核转换质量。",
+  "source_pdf": "个人总库/电子取证开源项目标准匹配/04-司法鉴定技术规范/SF-Z/2014/SF-Z-JD0403001-2014-软件相似性检验实施规范.pdf",
+  "source_markdown": "ragflow-import/01-正文Markdown/SF-Z-JD0403001-2014-软件相似性检验实施规范.md",
+  "sha256_pdf": "DF9C1BF560580AEE4D86A737DBD77065E83B685A5753CF0BF9ED4B515CDD1684",
+  "sha256_markdown": "DED35E252726DC208837837E63852BF341BD24EFE5606B519CAF9DD42B2ADC21",
+  "chunk_count": 4,
+  "chunk_ids": [
+    "sf-z-jd0403001-2014::chunk-001",
+    "sf-z-jd0403001-2014::chunk-002",
+    "sf-z-jd0403001-2014::chunk-003",
+    "sf-z-jd0403001-2014::chunk-004"
+  ],
+  "qa_status": "通过机械检查；需抽查版式",
+  "qa_flags": [],
+  "qa_observations": [
+    "PDF低文本页需视觉复核:1",
+    "含表格线性化"
+  ]
+}

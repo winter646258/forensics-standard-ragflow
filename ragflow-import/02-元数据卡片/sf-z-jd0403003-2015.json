@@ -1,0 +1,52 @@
+{
+  "document_id": "sf-z-jd0403003-2015",
+  "standard_id": "SF/Z JD0403003-2015",
+  "title": "计算机系统用户操作行为检验规范",
+  "standard_level": "司法鉴定技术规范",
+  "status": "推荐适用",
+  "supersedes": "",
+  "published_date": "2015-11-20",
+  "effective_date": "2015-11-20",
+  "notice": "司办通[2015]65号",
+  "source_url": "https://www.moj.gov.cn/pub/sfbgwapp/zwgk/tzggApp/202105/t20210517_395425.html",
+  "source_evidence": "司法部官网通知附件 + SHA-256",
+  "body_status": "正文已获取",
+  "review_status": "可导入",
+  "primary_recommendation": true,
+  "stage_tags": [
+    "数据检验",
+    "报告呈现"
+  ],
+  "object_tags": [
+    "计算机",
+    "日志",
+    "文件"
+  ],
+  "action_tags": [
+    "日志解析",
+    "行为检验",
+    "关联分析"
+  ],
+  "scenario_tags": [
+    "用户操作行为",
+    "计算机系统"
+  ],
+  "scope_summary": "以官方正文的目的、范围和条款为准；本字段不替代人工适用性判断。",
+  "clause_refs": "见正文切片关联文件；条款级引用仍需人工复核转换质量。",
+  "source_pdf": "个人总库/电子取证开源项目标准匹配/04-司法鉴定技术规范/SF-Z/2015/SF-Z-JD0403003-2015-计算机系统用户操作行为检验规范.pdf",
+  "source_markdown": "ragflow-import/01-正文Markdown/SF-Z-JD0403003-2015-计算机系统用户操作行为检验规范.md",
+  "sha256_pdf": "2C03C127148BBE2D1D8D55DC8799F3367588AA7005FD2FD901658397B9D62EAF",
+  "sha256_markdown": "F9AFD488D4340FDD6023D18B3D2F6D7BAD2AB074BFF24EB2C250124D29E1C0D1",
+  "chunk_count": 4,
+  "chunk_ids": [
+    "sf-z-jd0403003-2015::chunk-001",
+    "sf-z-jd0403003-2015::chunk-002",
+    "sf-z-jd0403003-2015::chunk-003",
+    "sf-z-jd0403003-2015::chunk-004"
+  ],
+  "qa_status": "通过机械检查；需抽查版式",
+  "qa_flags": [],
+  "qa_observations": [
+    "含表格线性化"
+  ]
+}
