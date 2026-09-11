@@ -1,0 +1,387 @@
+{
+  "summary": {
+    "files": 15,
+    "switch_to_reconverted": [
+      "sf-z-jd0301002-2015",
+      "sf-z-jd0401001-2014",
+      "sf-z-jd0402002-2015",
+      "sf-z-jd0403001-2014",
+      "sf-z-jd0403003-2015"
+    ],
+    "keep_current": [
+      "sf-z-jd0300002-2015",
+      "sf-z-jd0301003-2015",
+      "sf-z-jd0302001-2015",
+      "sf-z-jd0302002-2015",
+      "sf-z-jd0400001-2014",
+      "sf-z-jd0400002-2015",
+      "sf-z-jd0401002-2015",
+      "sf-z-jd0402001-2014",
+      "sf-z-jd0402003-2015",
+      "sf-z-jd0403002-2015"
+    ],
+    "problems": []
+  },
+  "rows": [
+    {
+      "document_id": "sf-z-jd0300002-2015",
+      "standard_id": "SF/Z JD0300002-2015",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 2649,
+        "lines": 63,
+        "clause_markers": 47,
+        "list_markers": 0,
+        "table_rows": 4,
+        "table_ratio": 0.063,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 2402,
+        "lines": 35,
+        "clause_markers": 32,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0301002-2015",
+      "standard_id": "SF/Z JD0301002-2015",
+      "status": "改用重转版",
+      "reason": "条款标记明显增多",
+      "current": {
+        "chars": 2313,
+        "lines": 61,
+        "clause_markers": 22,
+        "list_markers": 7,
+        "table_rows": 21,
+        "table_ratio": 0.344,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 2213,
+        "lines": 33,
+        "clause_markers": 30,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0301003-2015",
+      "standard_id": "SF/Z JD0301003-2015",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 2273,
+        "lines": 64,
+        "clause_markers": 46,
+        "list_markers": 7,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 2136,
+        "lines": 37,
+        "clause_markers": 34,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0302001-2015",
+      "standard_id": "SF/Z JD0302001-2015",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 3531,
+        "lines": 99,
+        "clause_markers": 59,
+        "list_markers": 28,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 3384,
+        "lines": 45,
+        "clause_markers": 42,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0302002-2015",
+      "standard_id": "SF/Z JD0302002-2015",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 2654,
+        "lines": 74,
+        "clause_markers": 50,
+        "list_markers": 13,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 2522,
+        "lines": 41,
+        "clause_markers": 38,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0400001-2014",
+      "standard_id": "SF/Z JD0400001-2014",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 4869,
+        "lines": 107,
+        "clause_markers": 66,
+        "list_markers": 6,
+        "table_rows": 13,
+        "table_ratio": 0.121,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 4918,
+        "lines": 45,
+        "clause_markers": 36,
+        "list_markers": 6,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0400002-2015",
+      "standard_id": "SF/Z JD0400002-2015",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 2605,
+        "lines": 21,
+        "clause_markers": 18,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 2605,
+        "lines": 21,
+        "clause_markers": 18,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0401001-2014",
+      "standard_id": "SF/Z JD0401001-2014",
+      "status": "改用重转版",
+      "reason": "列表项明显更完整",
+      "current": {
+        "chars": 5003,
+        "lines": 94,
+        "clause_markers": 39,
+        "list_markers": 24,
+        "table_rows": 8,
+        "table_ratio": 0.085,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 4883,
+        "lines": 61,
+        "clause_markers": 20,
+        "list_markers": 38,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0401002-2015",
+      "standard_id": "SF/Z JD0401002-2015",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 3706,
+        "lines": 60,
+        "clause_markers": 30,
+        "list_markers": 12,
+        "table_rows": 6,
+        "table_ratio": 0.1,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 3343,
+        "lines": 21,
+        "clause_markers": 17,
+        "list_markers": 1,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0402001-2014",
+      "standard_id": "SF/Z JD0402001-2014",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 3039,
+        "lines": 87,
+        "clause_markers": 26,
+        "list_markers": 27,
+        "table_rows": 4,
+        "table_ratio": 0.046,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 2922,
+        "lines": 47,
+        "clause_markers": 17,
+        "list_markers": 27,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0402002-2015",
+      "standard_id": "SF/Z JD0402002-2015",
+      "status": "改用重转版",
+      "reason": "条款标记明显增多",
+      "current": {
+        "chars": 2095,
+        "lines": 41,
+        "clause_markers": 23,
+        "list_markers": 6,
+        "table_rows": 3,
+        "table_ratio": 0.073,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 1979,
+        "lines": 32,
+        "clause_markers": 29,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0402003-2015",
+      "standard_id": "SF/Z JD0402003-2015",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 3052,
+        "lines": 56,
+        "clause_markers": 21,
+        "list_markers": 22,
+        "table_rows": 3,
+        "table_ratio": 0.054,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 2823,
+        "lines": 28,
+        "clause_markers": 25,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0403001-2014",
+      "standard_id": "SF/Z JD0403001-2014",
+      "status": "改用重转版",
+      "reason": "列表项明显更完整",
+      "current": {
+        "chars": 2766,
+        "lines": 73,
+        "clause_markers": 36,
+        "list_markers": 15,
+        "table_rows": 5,
+        "table_ratio": 0.068,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 2658,
+        "lines": 49,
+        "clause_markers": 26,
+        "list_markers": 25,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0403002-2015",
+      "standard_id": "SF/Z JD0403002-2015",
+      "status": "保留现有版本",
+      "reason": "现有版本更优或差别不大",
+      "current": {
+        "chars": 3545,
+        "lines": 53,
+        "clause_markers": 21,
+        "list_markers": 19,
+        "table_rows": 3,
+        "table_ratio": 0.057,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 3283,
+        "lines": 22,
+        "clause_markers": 19,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    },
+    {
+      "document_id": "sf-z-jd0403003-2015",
+      "standard_id": "SF/Z JD0403003-2015",
+      "status": "改用重转版",
+      "reason": "条款标记明显增多",
+      "current": {
+        "chars": 3312,
+        "lines": 90,
+        "clause_markers": 20,
+        "list_markers": 45,
+        "table_rows": 17,
+        "table_ratio": 0.189,
+        "toc_dots": 0
+      },
+      "candidate": {
+        "chars": 3129,
+        "lines": 33,
+        "clause_markers": 30,
+        "list_markers": 0,
+        "table_rows": 0,
+        "table_ratio": 0.0,
+        "toc_dots": 0
+      }
+    }
+  ]
+}
