@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [ValidateSet('up', 'down', 'ps', 'logs', 'config', 'pull')]
     [string]$Action = 'ps',

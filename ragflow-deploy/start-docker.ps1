@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [string]$DockerPath = '',
     [int]$TimeoutSeconds = 240

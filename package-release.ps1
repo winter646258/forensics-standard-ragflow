@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     打出可分发的发行包。
 
@@ -61,14 +61,16 @@ foreach ($file in $tracked) {
 New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null
 if (Test-Path -LiteralPath $zipPath) { Remove-Item -LiteralPath $zipPath -Force }
 
-# 优先用 Windows 自带的 bsdtar，它对中文文件名处理正确。
-$tar = Get-Command tar.exe -ErrorAction SilentlyContinue
-if ($tar) {
-    & $tar.Source -a -c -f $zipPath -C $stagingRoot $packageName
-    if ($LASTEXITCODE -ne 0) { throw "打包失败（tar 退出码 $LASTEXITCODE）。" }
-} else {
-    Compress-Archive -Path $staging -DestinationPath $zipPath -Force
-}
+# 用 .NET 打包并显式声明 UTF-8 文件名，让非中文环境解压时也不出现乱码。
+# 注意：以包内目录为源，顶层才会是 <仓库名>-<版本>，而不是临时目录名。
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[IO.Compression.ZipFile]::CreateFromDirectory(
+    $staging,
+    $zipPath,
+    [IO.Compression.CompressionLevel]::Optimal,
+    $true,
+    [Text.Encoding]::UTF8
+)
 
 Remove-Item -LiteralPath $stagingRoot -Recurse -Force
 
