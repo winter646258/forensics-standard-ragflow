@@ -224,7 +224,7 @@ API Key 只在本机 RAGFlow 模型设置中保存，不写入 GitHub、Markdown
 
 ### 环境恢复
 
-- Docker Desktop 实际安装在用户目录 `C:\Users\11247\AppData\Local\Programs\DockerDesktop`，
+- Docker Desktop 实际安装在用户目录 `%LOCALAPPDATA%\Programs\DockerDesktop`，
   并非 `C:\Program Files\Docker`；此前按后者查找才误判为未安装。
 - 反复启动失败的根因是残留套接字：后台进程被强制结束后，
   `AppData\Local\Docker\run\sailor-ingest.sock` 与

@@ -126,6 +126,14 @@ python ragflow-import\check_text_quality.py --pdf-root "<本地库根目录>" --
 `check_text_quality.py` 会对比「现有转换物」与「按阅读顺序重转版」并择优——
 注意重转**不是通用更优解**，判据与反例见下文「关键发现」。
 
+生成元数据卡片与哈希台账的 `build_import_inventory.py` 需要知道本地库位置，
+该位置通过环境变量传入，脚本里不写死本机路径：
+
+```powershell
+$env:FORENSICS_VAULT_ROOT = "<Obsidian Vault 根目录>"
+python ragflow-import\build_import_inventory.py
+```
+
 ### 4. 生成标准卡片并建目录库
 
 ```powershell
@@ -202,7 +210,7 @@ GraphRAG**，否则解析会因追加的 LLM 调用压垮容器：
 - 案件材料、个人信息与来源不明的文件。
 
 仓库**包含**标准编号、名称、状态、官方来源 URL、哈希与质量指标；
-元数据卡片与哈希台账中保留了本机库内路径。
+元数据卡片与哈希台账中保留了**相对路径**（相对本地库根目录）。
 
 标准文本的著作权属于发布机构，使用与传播请遵循来源授权。
 

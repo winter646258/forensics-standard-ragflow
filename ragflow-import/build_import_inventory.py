@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 from difflib import SequenceMatcher
 from datetime import date
@@ -12,7 +13,11 @@ from pypdf import PdfReader
 
 
 WORKSPACE = Path(__file__).resolve().parents[1]
-PDF_ROOT = Path(r"C:\Users\11247\OneDrive\文档\Obsidian Vault\个人总库\电子取证开源项目标准匹配\04-司法鉴定技术规范\SF-Z")
+# 本地 Obsidian Vault 根目录。用环境变量传入，避免把本机用户名写进仓库：
+#   $env:FORENSICS_VAULT_ROOT = "D:\path\to\Obsidian Vault"
+VAULT_ROOT = Path(os.environ.get("FORENSICS_VAULT_ROOT", r"C:\path\to\Obsidian Vault"))
+STANDARD_LIBRARY = VAULT_ROOT / "个人总库" / "电子取证开源项目标准匹配"
+PDF_ROOT = STANDARD_LIBRARY / "04-司法鉴定技术规范" / "SF-Z"
 MD_ROOT = WORKSPACE / "ragflow-import" / "01-正文Markdown"
 OUT_ROOT = WORKSPACE / "ragflow-import"
 REVIEW_DATE = "2026-09-08"
@@ -358,6 +363,12 @@ def first_match(text: str, patterns: Iterable[str]) -> str:
 
 
 def build() -> None:
+    if not PDF_ROOT.is_dir():
+        raise RuntimeError(
+            f"找不到标准正文目录：{PDF_ROOT}\n"
+            "请先设置环境变量 FORENSICS_VAULT_ROOT 指向你的 Obsidian Vault 根目录，"
+            "例如：$env:FORENSICS_VAULT_ROOT = 'D:\\path\\to\\Obsidian Vault'"
+        )
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
     pdfs = sorted(PDF_ROOT.rglob("*.pdf"))
     mds = {standard_key(path): path for path in MD_ROOT.glob("*.md")}
@@ -396,7 +407,7 @@ def build() -> None:
                 "source_line_start": chunk["source_line_start"],
                 "source_line_end": chunk["source_line_end"],
                 "source_markdown": str(md.relative_to(WORKSPACE)).replace("\\", "/"),
-                "source_pdf": str(pdf.relative_to(Path(r"C:\Users\11247\OneDrive\文档\Obsidian Vault\个人总库")).as_posix()),
+                "source_pdf": str(pdf.relative_to(VAULT_ROOT / "个人总库").as_posix()),
                 "sha256_pdf": file_hash,
                 "sha256_markdown": md_hash,
                 "text_chars": len(chunk["text"]),
@@ -457,7 +468,7 @@ def build() -> None:
             "qa_status": qa_status,
         })
         hash_rows.extend([
-            {"artifact_type": "source_pdf", "document_id": document_id, "standard_id": meta["standard_id"], "path": str(pdf.relative_to(Path(r"C:\Users\11247\OneDrive\文档\Obsidian Vault")).as_posix()), "bytes": pdf.stat().st_size, "sha256": file_hash, "obtained_or_generated": "2026-09-08"},
+            {"artifact_type": "source_pdf", "document_id": document_id, "standard_id": meta["standard_id"], "path": str(pdf.relative_to(VAULT_ROOT).as_posix()), "bytes": pdf.stat().st_size, "sha256": file_hash, "obtained_or_generated": "2026-09-08"},
             {"artifact_type": "converted_markdown", "document_id": document_id, "standard_id": meta["standard_id"], "path": str(md.relative_to(WORKSPACE)).replace("\\", "/"), "bytes": md.stat().st_size, "sha256": md_hash, "obtained_or_generated": "2026-09-08"},
         ])
         record = {
@@ -481,7 +492,7 @@ def build() -> None:
             "scenario_tags": meta["scenario_tags"],
             "scope_summary": "以官方正文的目的、范围和条款为准；本字段不替代人工适用性判断。",
             "clause_refs": "见正文切片关联文件；条款级引用仍需人工复核转换质量。",
-            "source_pdf": str(pdf.relative_to(Path(r"C:\Users\11247\OneDrive\文档\Obsidian Vault")).as_posix()),
+            "source_pdf": str(pdf.relative_to(VAULT_ROOT).as_posix()),
             "source_markdown": str(md.relative_to(WORKSPACE)).replace("\\", "/"),
             "sha256_pdf": file_hash,
             "sha256_markdown": md_hash,
