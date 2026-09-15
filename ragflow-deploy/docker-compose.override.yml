@@ -1,8 +1,12 @@
 services:
   es01:
     ports: !reset []
+    # Without an explicit heap the ES image sizes the JVM to 50% of the
+    # container memory limit (7.5 GB), so Elasticsearch alone consumed 4.4 GB
+    # and starved RAGFlow on this 7.7 GB WSL VM. Cap it explicitly.
     environment:
       ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
+      ES_JAVA_OPTS: -Xms1g -Xmx1g
 
   mysql:
     ports: !reset []
