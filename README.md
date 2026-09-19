@@ -237,6 +237,36 @@ MySQL `api_token` 表自动读取，不必手工填。
    于是一个参数错误同时造成「引用恒为空 + 回答乱猜标准编号 + 单次耗时 99～263 s」。
    改用 `{"chat_id": ..., "question": ...}` 后耗时降到 9.9 s，并能正确引用条款。
 
+11. **Windows 可能把 8081 划进 Hyper-V/WSL 的保留端口段，症状很有迷惑性。**
+   容器是 `Up` 状态，`HostConfig.PortBindings` 里也明明写着 `127.0.0.1:8081`，
+   但 `NetworkSettings.Ports` 是空的，8081 连不上，日志里没有任何报错。
+   直到强制重建容器才吐出真正的原因：
+
+   ```text
+   ports are not available: exposing port TCP 127.0.0.1:8081 -> 127.0.0.1:0:
+   listen tcp4 127.0.0.1:8081: bind: An attempt was made to access a socket in a way
+   forbidden by its access permissions.
+   ```
+
+   `netsh int ipv4 show excludedportrange protocol=tcp` 一看，8081 落在
+   `7937–8136` 这类保留段里 —— **没有进程占用，是系统禁止绑定**。
+   这些保留段由 Hyper-V/WSL 在初始化时动态划分，会随重启游走，
+   所以同一个端口昨天能用、今天突然不行。
+
+   ```powershell
+   net stop winnat
+   net start winnat
+   ```
+
+   重启 `winnat` 会重新划分保留段（实测 `7937–8136` 整段被释放），随后
+   `docker start <ragflow 容器>` 即可恢复。**不用改端口，也不用重建知识库。**
+
+12. **重建 RAGFlow 容器会轮换 API Token。**
+   查询应用如果只在启动时读一次 Token，容器一重建就全部请求 401 ——
+   界面看着正常、却什么都查不出来，还以为知识库坏了。
+   `ragflow-query/app.py` 因此在命中 401 时自动重读一次 Token 并重发
+   （只重发一次，凭证真的不对时不会反复撞墙）。
+
 ## 已知限制
 
 - **候选标准多数仍为「待权威核验」**（64/78），按验收规则不得作为主推荐，

@@ -268,18 +268,39 @@ def _is_transient(err):
     return any(k in m for k in _TRANSIENT)
 
 
+def _is_auth_error(err):
+    """上游说 401/Unauthorized：Token 可能已轮换，换新 Token 重发即可。"""
+    m = (err or "").lower()
+    return "http 401" in m or "unauthorized" in m
+
+
 def rf_request(cfg, token, method, path, payload=None, timeout=120,
-               retries=0, tag=""):
+               retries=0, tag="", token_getter=None):
     """带自动重试的调用，返回 (body, 累计耗时, error)。
 
-    实测：SiliconFlow embedding 偶发 RemoteDisconnected 属抖动，
-    同一问题重发即成功（容器无需重启），因此这里退避重试而不是报错。
+    两类失败分开处理，都不该让用户看到报错：
+    - **偶发抖动**（embedding 断连、502/503/504）→ 退避重试。
+      实测同一问题重发即成功，容器无需重启。
+    - **401** → Token 可能已轮换（重建 RAGFlow 容器会换 Token，
+      而本进程启动时读到的那个就此失效）→ 重新取一次 Token 重发。
+      不占抖动重试的配额，且只做一次，避免凭证真的不对时反复撞墙。
     """
     total, attempt = 0.0, 0
+    auth_retried = False
     while True:
         body, el, err = _rf_once(cfg, token, method, path, payload, timeout)
         total += el
-        if err is None or attempt >= retries or not _is_transient(err):
+        if err is None:
+            return body, total, None
+        if _is_auth_error(err) and token_getter and not auth_retried:
+            auth_retried = True
+            fresh = token_getter()
+            if fresh and fresh != token:
+                log("%s 收到 401，改用重新读取的 Token 重发" % (tag or path))
+                token = fresh
+                continue
+            return body, total, err
+        if attempt >= retries or not _is_transient(err):
             return body, total, err
         attempt += 1
         wait = 2 * attempt
@@ -383,7 +404,8 @@ class Handler(BaseHTTPRequestHandler):
         }
         body, el, err = rf_request(
             cfg, self.server.token, "GET", "/datasets?page=1&page_size=10",
-            None, cfg.get("status_timeout", 10), retries=1, tag="status")
+            None, cfg.get("status_timeout", 10), retries=1, tag="status",
+            token_getter=getattr(self.server, "reload_token", None))
         if err:
             info["error"] = err
         else:
@@ -416,7 +438,8 @@ class Handler(BaseHTTPRequestHandler):
         }
         body, el, err = rf_request(cfg, self.server.token, "POST", "/retrieval",
                                    payload, cfg.get("retrieval_timeout", 120),
-                                   retries=2, tag="retrieve")
+                                   retries=2, tag="retrieve",
+                                   token_getter=getattr(self.server, "reload_token", None))
         if err:
             log("retrieve 失败：%s" % err)
             return self._send(200, {"ok": False, "error": err, "elapsed": round(el, 1)})
@@ -440,7 +463,8 @@ class Handler(BaseHTTPRequestHandler):
         payload = {"chat_id": cfg.get("chat_id"), "question": q, "stream": False}
         body, el, err = rf_request(cfg, self.server.token, "POST", "/chat/completions",
                                    payload, cfg.get("chat_timeout", 300),
-                                   retries=2, tag="chat")
+                                   retries=2, tag="chat",
+                                   token_getter=getattr(self.server, "reload_token", None))
         if err:
             log("chat 失败：%s" % err)
             return self._send(200, {"ok": False, "error": err, "elapsed": round(el, 1)})
@@ -499,6 +523,21 @@ def main():
     httpd.token = token
     httpd.token_source = src
     httpd.daemon_threads = True
+
+    def reload_token():
+        """重新按三级顺序取一次 Token，成功则更新服务端持有的那个。
+
+        RAGFlow 容器重建会换掉 API Token，而本进程启动时读到的那份就此失效；
+        命中 401 时靠它自动换新，用户不必重启应用。
+        """
+        fresh, fresh_src = resolve_token(cfg)
+        if fresh and fresh != httpd.token:
+            httpd.token = fresh
+            httpd.token_source = fresh_src
+            log("已重新读取 Token（来源：%s，长度 %d）" % (fresh_src, len(fresh)))
+        return fresh
+
+    httpd.reload_token = reload_token
 
     url = "http://%s:%d/" % (host, port)
     log("=" * 56)
