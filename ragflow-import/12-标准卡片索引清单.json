@@ -1,27 +1,27 @@
 {
   "summary": {
-    "cards": 85,
+    "cards": 87,
     "with_detail": 15,
-    "catalog_only": 70
+    "catalog_only": 72
   },
   "cards": [
     {
       "file": "gb-t-29360-2023.md",
       "standard_id": "GB/T 29360-2023",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "gb-t-29361-2023.md",
       "standard_id": "GB/T 29361-2023",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "gb-t-29362-2023.md",
       "standard_id": "GB/T 29362-2023",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "gb-t-39321-2020.md",
@@ -159,7 +159,7 @@
       "file": "ga-t-1479-2018.md",
       "standard_id": "GA/T 1479-2018",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "ga-t-1480-2018.md",
@@ -171,13 +171,13 @@
       "file": "ga-t-1554-2019.md",
       "standard_id": "GA/T 1554-2019",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "ga-t-1564-2019.md",
       "standard_id": "GA/T 1564-2019",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "ga-t-1568-2019.md",
@@ -195,7 +195,7 @@
       "file": "ga-t-1570-2019.md",
       "standard_id": "GA/T 1570-2019",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "ga-t-1571-2019.md",
@@ -231,19 +231,19 @@
       "file": "ga-t-756-2021.md",
       "standard_id": "GA/T 756-2021",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "ga-t-1966-2021.md",
       "standard_id": "GA/T 1966-2021",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "ga-t-1069-2021.md",
       "standard_id": "GA/T 1069-2021",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "ga-t-1070-2021.md",
@@ -285,13 +285,13 @@
       "file": "ga-t-2134-2024.md",
       "standard_id": "GA/T 2134-2024",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "ga-t-2136-2024.md",
       "standard_id": "GA/T 2136-2024",
       "has_detail": false,
-      "status": "待权威核验"
+      "status": "现行"
     },
     {
       "file": "ga-t-2341-2025.md",
@@ -460,6 +460,18 @@
       "standard_id": "SF/T 0181-2024",
       "has_detail": false,
       "status": "待权威核验"
+    },
+    {
+      "file": "ga-t-2160-2024.md",
+      "standard_id": "GA/T 2160-2024",
+      "has_detail": false,
+      "status": "现行"
+    },
+    {
+      "file": "ga-t-825-2009.md",
+      "standard_id": "GA/T 825-2009",
+      "has_detail": false,
+      "status": "废止"
     },
     {
       "file": "sf-z-jd0402001-2014.md",

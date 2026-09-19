@@ -5,7 +5,13 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$dockerDesktopExe = Join-Path $env:LOCALAPPDATA 'Programs\DockerDesktop\Docker Desktop.exe'
+# Docker Desktop can be installed per-user or machine-wide; probe both, in the
+# same order the CLI probe below uses, so this script works on either layout.
+$desktopCandidates = @(
+    (Join-Path $env:LOCALAPPDATA 'Programs\DockerDesktop\Docker Desktop.exe'),
+    'C:\Program Files\Docker\Docker\Docker Desktop.exe'
+)
+$dockerDesktopExe = $desktopCandidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
 $runDir = Join-Path $env:LOCALAPPDATA 'Docker\run'
 $secretsDir = Join-Path $env:LOCALAPPDATA 'docker-secrets-engine'
 
@@ -25,8 +31,8 @@ if (-not $DockerPath) {
 if (-not $DockerPath -or -not (Test-Path -LiteralPath $DockerPath)) {
     throw 'Docker CLI not found. Install or repair Docker Desktop first.'
 }
-if (-not (Test-Path -LiteralPath $dockerDesktopExe)) {
-    throw "Docker Desktop not found at $dockerDesktopExe"
+if (-not $dockerDesktopExe) {
+    throw "Docker Desktop not found. Looked in: $($desktopCandidates -join '; ')"
 }
 
 function Test-Engine {

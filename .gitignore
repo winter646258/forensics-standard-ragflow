@@ -22,3 +22,10 @@ ragflow-import/03-正文切片关联.jsonl
 
 # Local validation reports may contain machine-specific paths
 ragflow-import/07-导入资产验收*.json
+
+# Query app local runtime state: the run log and the rollback backup of the old catalog
+ragflow-query/logs/app.log
+ragflow-query/logs/*备份*.json
+
+# One-off local backups left behind when regenerating data files
+ragflow-import/*.bak-*

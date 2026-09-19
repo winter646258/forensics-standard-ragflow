@@ -60,10 +60,22 @@ def render_card(catalog: dict, detail: dict | None) -> str:
     else:
         can_recommend = bool(catalog.get("primary_recommendation"))
 
+    if can_recommend:
+        recommend_text = "可以"
+    else:
+        reasons = []
+        if str(status) in ("", "None", "待核验", "待权威核验"):
+            reasons.append("状态待核验")
+        if "未获取" in str(body_status or ""):
+            reasons.append("正文未取得")
+        if str(status) == "废止":
+            reasons.append("已废止")
+        recommend_text = "否（%s）" % "；".join(reasons) if reasons else "否"
+
     lines.append(bullet("标准状态", status))
     lines.append(bullet("正文状态", body_status))
     lines.append(bullet("复核状态", review_status))
-    lines.append(bullet("可否作为主推荐", "可以" if can_recommend else "否（状态待核验或正文未取得）"))
+    lines.append(bullet("可否作为主推荐", recommend_text))
 
     if detail:
         lines.append(bullet("适用阶段", detail.get("stage_tags")))
@@ -81,14 +93,31 @@ def render_card(catalog: dict, detail: dict | None) -> str:
         lines.append(bullet("技术动作", None))
         lines.append(bullet("适用场景", None))
         lines.append(bullet("适用范围摘要", "未核验，仅凭标准名称判断，不得据此给出适用结论"))
-        lines.append(bullet("官方来源", "未核验"))
+        # 目录条目在状态核验后也会带上官方来源与发布/实施信息，一并渲染出来。
+        if catalog.get("published_date") or catalog.get("effective_date"):
+            lines.append(bullet(
+                "发布与实施",
+                f"{catalog.get('published_date', '')} 发布，{catalog.get('effective_date', '')} 实施"))
+        if catalog.get("supersedes"):
+            lines.append(bullet("替代关系", f"代替 {catalog.get('supersedes')}"))
+        lines.append(bullet("官方来源", catalog.get("source_url") or "未核验"))
+        if catalog.get("verified_date"):
+            lines.append(bullet("核验日期", catalog.get("verified_date")))
+        if catalog.get("verified_note"):
+            lines.append(bullet("核验备注", catalog.get("verified_note")))
 
     lines.append(bullet("数据来源", catalog.get("source_basis")))
     lines.append("")
-    lines.append(
-        "> 本卡片仅为目录层元数据。状态或来源未经权威核验，或正文未取得时，"
-        "不得输出任何条款号、条款原文或强制适用结论。"
-    )
+    if not detail and catalog.get("source_url"):
+        lines.append(
+            "> 本卡片仅为目录层元数据。**标准状态与官方来源已核验**（见「官方来源」），"
+            "但正文未取得，不得输出任何条款号、条款原文或强制适用结论。"
+        )
+    else:
+        lines.append(
+            "> 本卡片仅为目录层元数据。状态或来源未经权威核验，或正文未取得时，"
+            "不得输出任何条款号、条款原文或强制适用结论。"
+        )
     return "\n".join(lines) + "\n"
 
 

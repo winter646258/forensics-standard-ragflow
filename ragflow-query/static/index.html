@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电子取证标准查询</title>
+<style>
+  :root{
+    --bg:#f4f6f9; --card:#ffffff; --line:#e2e8f0; --ink:#1a202c; --ink2:#4a5568;
+    --muted:#8a94a6; --pri:#1a4d8f; --pri-soft:#eaf1fa; --acc:#0b7285;
+    --warn:#b45309; --warn-bg:#fffbeb; --err:#b91c1c; --err-bg:#fef2f2;
+    --ok:#15803d; --shadow:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);
+    --mono:"Cascadia Mono",Consolas,"Courier New",monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink); line-height:1.7;
+    font:15px/1.7 "Microsoft YaHei","PingFang SC","Segoe UI",system-ui,sans-serif;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+
+  /* ---------- 头部 ---------- */
+  header{
+    background:linear-gradient(180deg,#153f74 0%,#1a4d8f 100%);
+    color:#fff;padding:22px 0 26px;margin-bottom:24px;
+    border-bottom:3px solid #0b2f57;
+  }
+  .head-in{max-width:1180px;margin:0 auto;padding:0 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand svg{flex:none;opacity:.95}
+  .brand h1{margin:0;font-size:21px;font-weight:600;letter-spacing:.5px}
+  .brand .sub{font-size:12.5px;color:#a8c4e4;margin-top:2px;letter-spacing:.3px}
+  .status{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;font-size:12px;
+    padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.13);
+    color:#dce8f6;border:1px solid rgba(255,255,255,.18);white-space:nowrap;
+  }
+  .chip b{font-weight:600;color:#fff}
+  .dot{width:7px;height:7px;border-radius:50%;background:#94a3b8;flex:none}
+  .dot.ok{background:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,.2)}
+  .dot.bad{background:#f87171;box-shadow:0 0 0 3px rgba(248,113,113,.2)}
+
+  /* ---------- 卡片 ---------- */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+
+  /* ---------- 提问区 ---------- */
+  .ask{padding:18px 18px 14px;margin-bottom:20px}
+  .ask textarea{
+    width:100%;border:1px solid var(--line);border-radius:9px;padding:13px 14px;
+    font:15px/1.65 inherit;color:var(--ink);resize:vertical;min-height:78px;
+    background:#fcfdfe;transition:border-color .15s,box-shadow .15s;
+  }
+  .ask textarea:focus{outline:none;border-color:var(--pri);box-shadow:0 0 0 3px rgba(26,77,143,.1);background:#fff}
+  .ask-row{display:flex;align-items:center;gap:12px;margin-top:11px;flex-wrap:wrap}
+  .btn{
+    border:none;border-radius:8px;padding:10px 24px;font:600 14.5px/1 inherit;cursor:pointer;
+    background:var(--pri);color:#fff;transition:background .15s,transform .05s;
+  }
+  .btn:hover{background:#153f74}
+  .btn:active{transform:translateY(1px)}
+  .btn:disabled{background:#a8b6c8;cursor:not-allowed}
+  .btn.ghost{background:#fff;color:var(--ink2);border:1px solid var(--line);padding:9px 16px;font-weight:500}
+  .btn.ghost:hover{background:#f8fafc;color:var(--ink)}
+  .hint{color:var(--muted);font-size:12.5px;margin-left:auto}
+
+  .samples{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+  .samples .lb{font-size:12.5px;color:var(--muted);padding:4px 0;margin-right:2px}
+  .samp{
+    font-size:12.5px;padding:5px 12px;border-radius:16px;background:#f1f5f9;
+    border:1px solid var(--line);color:var(--ink2);cursor:pointer;transition:.15s;
+  }
+  .samp:hover{background:var(--pri-soft);border-color:#b9cfe8;color:var(--pri)}
+
+  /* ---------- 结果布局 ---------- */
+  .grid{display:grid;grid-template-columns:1.45fr 1fr;gap:20px;align-items:start}
+  @media(max-width:940px){.grid{grid-template-columns:1fr}}
+
+  .panel-h{
+    display:flex;align-items:center;gap:9px;padding:13px 17px;border-bottom:1px solid var(--line);
+    font-size:14px;font-weight:600;color:var(--ink);
+  }
+  .panel-h .meta{margin-left:auto;font-size:12px;font-weight:400;color:var(--muted)}
+  .panel-b{padding:17px}
+
+  /* ---------- 答案 ---------- */
+  .answer{min-height:120px}
+  .answer .ph{color:var(--muted);font-size:14px;text-align:center;padding:44px 10px}
+  .answer h3,.answer h4{color:var(--pri);margin:20px 0 9px;font-size:15.5px;font-weight:600}
+  .answer h3:first-child,.answer h4:first-child,.answer p:first-child{margin-top:0}
+  .answer p{margin:0 0 11px}
+  .answer ul,.answer ol{margin:0 0 12px;padding-left:23px}
+  .answer li{margin-bottom:5px}
+  .answer strong{color:#0f3d73;font-weight:600}
+  .answer code{font-family:var(--mono);font-size:13px;background:#f1f5f9;padding:1.5px 6px;border-radius:4px;color:#0b4f6c}
+  .answer .bk{color:var(--acc);font-weight:500}
+
+  /* ---------- 引用 ---------- */
+  .refs{display:flex;flex-direction:column;gap:11px}
+  .ref{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;transition:border-color .15s}
+  .ref:hover{border-color:#c3d5ea}
+  .ref-top{padding:11px 13px;cursor:pointer;display:flex;flex-direction:column;gap:6px}
+  .ref-l1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .code{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--pri);letter-spacing:.2px}
+  .tag{font-size:11px;padding:2px 8px;border-radius:11px;font-weight:600;white-space:nowrap}
+  .tag.body{background:#e0edfb;color:#1a4d8f;border:1px solid #c5dcf5}
+  .tag.cat{background:#f0f2f5;color:#5a6675;border:1px solid #e0e4ea}
+  .title{font-size:13.5px;color:var(--ink2);line-height:1.5}
+  .simrow{display:flex;align-items:center;gap:8px}
+  .simbar{flex:1;height:4px;background:#eef2f7;border-radius:3px;overflow:hidden;max-width:130px}
+  .simbar i{display:block;height:100%;background:linear-gradient(90deg,#3b82f6,#0b7285);border-radius:3px}
+  .simval{font-size:11.5px;color:var(--muted);font-family:var(--mono)}
+  .snips{border-top:1px dashed var(--line);padding:0}
+  .snip{padding:11px 13px;font-size:13.5px;color:#374151;line-height:1.75;border-top:1px solid #f2f5f9}
+  .snip:first-child{border-top:none}
+  .snip .simb{font-size:11px;color:var(--muted);font-family:var(--mono);margin-bottom:4px}
+  .snip .txt{white-space:pre-wrap;word-break:break-word;
+    display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+  .ref.open .snip .txt{-webkit-line-clamp:unset;display:block}
+  .more{font-size:12px;color:var(--pri);padding:8px 13px;border-top:1px solid #f2f5f9;cursor:pointer;user-select:none}
+  .more:hover{background:#fafcff}
+  .cat-note{
+    font-size:12px;color:var(--warn);background:var(--warn-bg);border:1px solid #fde68a;
+    border-radius:8px;padding:9px 17px;margin-top:14px;line-height:1.6;
+  }
+
+  /* ---------- 状态提示 ---------- */
+  .skel{display:flex;align-items:center;gap:10px;padding:36px 10px;justify-content:center;color:var(--muted);font-size:14px}
+  .spin{width:15px;height:15px;border:2px solid #dbe3ec;border-top-color:var(--pri);border-radius:50%;
+    animation:sp .75s linear infinite;flex:none}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  .alert{border-radius:9px;padding:12px 15px;font-size:13.5px;line-height:1.65;margin-bottom:14px}
+  .alert.err{background:var(--err-bg);border:1px solid #fecaca;color:var(--err)}
+  .alert.warn{background:var(--warn-bg);border:1px solid #fde68a;color:var(--warn)}
+
+  /* ---------- 历史 ---------- */
+  .hist{margin-top:24px}
+  .hist-list{display:flex;gap:8px;flex-wrap:wrap}
+  .hitem{
+    font-size:12.5px;padding:6px 12px;border-radius:16px;background:#fff;
+    border:1px solid var(--line);color:var(--ink2);cursor:pointer;max-width:330px;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:.15s;
+  }
+  .hitem:hover{border-color:#b9cfe8;color:var(--pri);background:var(--pri-soft)}
+
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:38px;line-height:1.9}
+  footer code{font-family:var(--mono);background:#e8edf3;padding:1px 5px;border-radius:4px}
+  .toast{
+    position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);
+    background:#1a202c;color:#fff;padding:10px 22px;border-radius:8px;font-size:13.5px;
+    opacity:0;transition:.28s;pointer-events:none;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.2);
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-in">
+    <div class="brand">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#cfe2f7" stroke-width="1.6">
+        <path d="M12 3l7.5 3v5.5c0 4.6-3.1 8-7.5 9.3-4.4-1.3-7.5-4.7-7.5-9.3V6L12 3z"/>
+        <path d="M9.2 12l2 2 3.6-3.8" stroke="#7dd3a0" stroke-width="1.9"/>
+      </svg>
+      <div>
+        <h1>电子取证标准查询</h1>
+        <div class="sub">FORENSIC STANDARDS RETRIEVAL · 本地知识库</div>
+      </div>
+    </div>
+    <div class="status" id="status">
+      <span class="chip"><span class="dot" id="d-rf"></span><span id="t-rf">RAGFlow 检测中</span></span>
+      <span class="chip"><span class="dot" id="d-tk"></span><span id="t-tk">Token 检测中</span></span>
+      <span class="chip" id="c-kb" style="display:none"></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card ask">
+    <textarea id="q" placeholder="请输入要查询的问题，例如：电子数据搜索检验记录表应该怎么填？&#10;（Enter 提交，Shift + Enter 换行）"></textarea>
+    <div class="ask-row">
+      <button class="btn" id="go">查 询</button>
+      <button class="btn ghost" id="clr">清空</button>
+      <span class="hint" id="hint">答案约需 10～60 秒，引用通常 1 秒内先出</span>
+    </div>
+    <div class="samples">
+      <span class="lb">示例：</span>
+      <span class="samp">电子数据搜索检验记录表应该怎么填？</span>
+      <span class="samp">录音资料真实性鉴定有哪些规范要求？</span>
+      <span class="samp">手机电子数据提取的操作流程是什么？</span>
+      <span class="samp">数据库数据真实性鉴定适用哪个标准？</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="panel-h">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1a4d8f" stroke-width="2">
+          <path d="M4 5h16M4 12h16M4 19h10"/>
+        </svg>
+        回答
+        <span class="meta" id="ans-meta"></span>
+      </div>
+      <div class="panel-b">
+        <div id="ans-err"></div>
+        <div class="answer" id="ans">
+          <div class="ph">输入问题后点击「查询」，这里会显示基于标准原文生成的回答。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="panel-h">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0b7285" stroke-width="2">
+          <path d="M5 4h9l5 5v11H5z"/><path d="M14 4v5h5"/><path d="M8.5 13h7M8.5 16.5h4.5"/>
+        </svg>
+        引用来源
+        <span class="meta" id="ref-meta"></span>
+      </div>
+      <div class="panel-b">
+        <div id="ref-err"></div>
+        <div class="refs" id="refs">
+          <div class="ph" style="color:var(--muted);font-size:13.5px;text-align:center;padding:32px 10px">
+            命中标准时，这里显示原文条款与相似度。
+          </div>
+        </div>
+        <div class="cat-note" id="cat-note" style="display:none">
+          标「目录库」的条目仅提供标准编号、状态与替代关系，<b>不含正文条款</b>，不能作为条款依据引用。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card hist" id="hist-box" style="display:none">
+    <div class="panel-h">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2">
+        <circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>
+      </svg>
+      最近查询
+      <span class="meta"><span id="clr-hist" style="cursor:pointer;color:var(--pri)">清除</span></span>
+    </div>
+    <div class="panel-b"><div class="hist-list" id="hist"></div></div>
+  </div>
+
+  <footer>
+    数据来源：电子取证国家及行业标准本地知识库 · 服务地址 <code id="f-url">—</code><br>
+    回答由大模型基于检索到的标准原文生成，<b>结论请以标准正文为准</b>，重要判定需人工复核。
+  </footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var HIST_KEY = "efsq_history_v1";
+  var last = { answer:"", refs:[] };
+
+  /* ---------------- 工具 ---------------- */
+  function esc(s){
+    return String(s==null?"":s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+  function inline(s){
+    return s.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>")
+            .replace(/`([^`]+)`/g,"<code>$1</code>")
+            .replace(/《([^》]{1,60})》/g,'<span class="bk">《$1》</span>');
+  }
+  function md(src){
+    var lines = esc(src).split(/\r?\n/), out = [], list = null;
+    function close(){ if(list){ out.push("</"+list+">"); list = null; } }
+    for (var i=0;i<lines.length;i++){
+      var line = lines[i].replace(/\s+$/,"");
+      if (!line.trim()){ close(); continue; }
+      var m;
+      if ((m = line.match(/^\s*(#{1,6})\s+(.*)$/))){
+        close();
+        var lv = Math.min(6, m[1].length + 2);
+        out.push("<h"+lv+">"+inline(m[2])+"</h"+lv+">");
+        continue;
+      }
+      if ((m = line.match(/^\s*[-*+]\s+(.*)$/))){
+        if (list !== "ul"){ close(); out.push("<ul>"); list = "ul"; }
+        out.push("<li>"+inline(m[1])+"</li>");
+        continue;
+      }
+      if ((m = line.match(/^\s*\d+[.)]\s+(.*)$/))){
+        if (list !== "ol"){ close(); out.push("<ol>"); list = "ol"; }
+        out.push("<li>"+inline(m[1])+"</li>");
+        continue;
+      }
+      close();
+      out.push("<p>"+inline(line)+"</p>");
+    }
+    close();
+    return out.join("");
+  }
+  function toast(msg){
+    var el = $("toast"); el.textContent = msg; el.classList.add("show");
+    setTimeout(function(){ el.classList.remove("show"); }, 1900);
+  }
+  function alertBox(where, kind, msg){
+    if (!msg){ where.innerHTML = ""; return; }
+    where.innerHTML = '<div class="alert '+kind+'">'+esc(msg)+"</div>";
+  }
+  function loading(text, where){
+    where.innerHTML = '<div class="skel"><span class="spin"></span>'+esc(text)+"</div>";
+  }
+  function post(path, body){
+    return fetch(path, {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify(body)
+    }).then(function(r){ return r.json(); });
+  }
+
+  /* ---------------- 状态 ---------------- */
+  function refreshStatus(){
+    var dRf = $("d-rf"), dTk = $("d-tk");
+    fetch("/api/status").then(function(r){ return r.json(); }).then(function(s){
+      $("f-url").textContent = location.origin;
+      if (s.ragflow_ok){
+        dRf.className = "dot ok";
+        $("t-rf").innerHTML = "RAGFlow <b>在线</b>";
+      } else {
+        dRf.className = "dot bad";
+        $("t-rf").innerHTML = "RAGFlow <b>离线</b>";
+      }
+      if (s.token_ok){
+        dTk.className = "dot ok";
+        $("t-tk").innerHTML = "凭据 <b>就绪</b>";
+      } else {
+        dTk.className = "dot bad";
+        $("t-tk").innerHTML = "凭据 <b>缺失</b>";
+      }
+      var kb = $("c-kb"), txt = [];
+      (s.datasets||[]).forEach(function(d){
+        if (d.missing) txt.push(d.label + " 未找到");
+        else txt.push(d.label + " " + d.documents + " 份");
+      });
+      if (txt.length){ kb.style.display = ""; kb.innerHTML = txt.join(" · "); }
+
+      if (!s.ragflow_ok){
+        alertBox($("ans-err"), "err",
+          "RAGFlow 未就绪：" + (s.error || "无法连接") +
+          "\n请确认 Docker 中的 ragflow 容器已启动。");
+      } else if (!s.token_ok){
+        alertBox($("ans-err"), "warn",
+          '未取得 API Token，查询会失败。请在 config.json 的 "token" 字段填入 RAGFlow 的 API Key。');
+      } else {
+        alertBox($("ans-err"), "", "");
+      }
+    }).catch(function(){
+      dRf.className = "dot bad"; $("t-rf").textContent = "服务异常";
+    });
+  }
+
+  /* ---------------- 渲染 ---------------- */
+  function renderRefs(res){
+    var box = $("refs"), err = $("ref-err");
+    alertBox(err, "", "");
+    if (!res.ok){
+      $("ref-meta").textContent = "";
+      box.innerHTML = "";
+      alertBox(err, "err", "引用检索失败：" + res.error);
+      return;
+    }
+    var refs = res.refs || [];
+    last.refs = refs;
+    $("ref-meta").textContent = refs.length
+      ? (refs.length + " 个来源 · " + res.elapsed + "s") : (res.elapsed + "s");
+
+    var hasCat = refs.some(function(x){ return x.source.indexOf("目录") >= 0; });
+    $("cat-note").style.display = hasCat ? "" : "none";
+
+    if (!refs.length){
+      box.innerHTML = '<div class="ph" style="color:var(--muted);font-size:13.5px;text-align:center;padding:32px 10px">'
+        + "没有命中任何标准。可换一种问法，或放宽 config.json 里的相似度阈值。</div>";
+      return;
+    }
+    box.innerHTML = refs.map(function(r, i){
+      var isCat = r.source.indexOf("目录") >= 0;
+      var pct = Math.max(2, Math.round(r.best * 100));
+      var snips = (r.snippets||[]).map(function(s){
+        return '<div class="snip"><div class="simb">相似度 ' + s.sim.toFixed(4) + "</div>"
+             + '<div class="txt">' + esc(s.text) + "</div></div>";
+      }).join("");
+      return '<div class="ref" data-i="' + i + '">'
+        + '<div class="ref-top">'
+        +   '<div class="ref-l1">'
+        +     '<span class="code">' + esc(r.code || r.doc_name) + "</span>"
+        +     '<span class="tag ' + (isCat ? "cat" : "body") + '">' + esc(r.source) + "</span>"
+        +   "</div>"
+        +   (r.title ? '<div class="title">' + esc(r.title) + "</div>" : "")
+        +   '<div class="simrow"><div class="simbar"><i style="width:' + pct + '%"></i></div>'
+        +     '<span class="simval">' + r.best.toFixed(4) + "</span></div>"
+        + "</div>"
+        + '<div class="snips">' + snips + "</div>"
+        + (snips ? '<div class="more">展开 / 收起全文</div>' : "")
+        + "</div>";
+    }).join("");
+
+    Array.prototype.forEach.call(box.querySelectorAll(".ref"), function(el){
+      el.addEventListener("click", function(e){
+        if (e.target.classList.contains("more") || !el.classList.contains("open")){
+          el.classList.toggle("open");
+        }
+      });
+    });
+  }
+
+  function renderAnswer(res){
+    var box = $("ans"), err = $("ans-err");
+    if (!res.ok){
+      $("ans-meta").textContent = "";
+      box.innerHTML = '<div class="ph">未能生成回答。</div>';
+      alertBox(err, "err", "回答生成失败：" + res.error);
+      return;
+    }
+    alertBox(err, "", "");
+    last.answer = res.answer || "";
+    $("ans-meta").textContent = "耗时 " + res.elapsed + "s · " + last.answer.length + " 字";
+    box.innerHTML = last.answer
+      ? md(last.answer)
+      : '<div class="ph">模型未返回内容，请重试。</div>';
+  }
+
+  /* ---------------- 历史 ---------------- */
+  function loadHist(){
+    try { return JSON.parse(localStorage.getItem(HIST_KEY) || "[]"); } catch(e){ return []; }
+  }
+  function saveHist(q){
+    var h = loadHist().filter(function(x){ return x !== q; });
+    h.unshift(q);
+    h = h.slice(0, 12);
+    try { localStorage.setItem(HIST_KEY, JSON.stringify(h)); } catch(e){}
+    drawHist();
+  }
+  function drawHist(){
+    var h = loadHist(), box = $("hist-box");
+    if (!h.length){ box.style.display = "none"; return; }
+    box.style.display = "";
+    $("hist").innerHTML = h.map(function(q){
+      return '<span class="hitem" title="' + esc(q) + '">' + esc(q) + "</span>";
+    }).join("");
+    Array.prototype.forEach.call($("hist").querySelectorAll(".hitem"), function(el){
+      el.addEventListener("click", function(){ $("q").value = el.textContent; ask(); });
+    });
+  }
+
+  /* ---------------- 主流程 ---------------- */
+  var busy = false;
+  function ask(){
+    if (busy) return;
+    var q = $("q").value.trim();
+    if (!q){ toast("请先输入问题"); $("q").focus(); return; }
+
+    busy = true;
+    $("go").disabled = true;
+    $("go").textContent = "查询中…";
+    $("hint").textContent = "正在检索…";
+
+    $("ans-meta").textContent = "";
+    $("ref-meta").textContent = "";
+    $("cat-note").style.display = "none";
+    alertBox($("ans-err"), "", "");
+    alertBox($("ref-err"), "", "");
+    loading("正在从标准库检索依据…", $("refs"));
+    loading("正在生成回答，请稍候…", $("ans"));
+
+    var t0 = Date.now();
+    var refDone = false, ansDone = false;
+    function finish(){
+      if (!refDone || !ansDone) return;
+      busy = false;
+      $("go").disabled = false;
+      $("go").textContent = "查 询";
+      $("hint").textContent = "总耗时 " + ((Date.now() - t0) / 1000).toFixed(1) + " 秒";
+      saveHist(q);
+    }
+
+    post("/api/retrieve", { question: q }).then(function(res){
+      renderRefs(res);
+    }).catch(function(e){
+      renderRefs({ ok:false, error:"请求失败：" + e });
+    }).then(function(){ refDone = true; finish(); });
+
+    post("/api/chat", { question: q }).then(function(res){
+      renderAnswer(res);
+    }).catch(function(e){
+      renderAnswer({ ok:false, error:"请求失败：" + e });
+    }).then(function(){ ansDone = true; finish(); });
+  }
+
+  /* ---------------- 事件 ---------------- */
+  $("go").addEventListener("click", ask);
+  $("clr").addEventListener("click", function(){
+    $("q").value = ""; $("q").focus();
+    $("ans").innerHTML = '<div class="ph">输入问题后点击「查询」，这里会显示基于标准原文生成的回答。</div>';
+    $("refs").innerHTML = '<div class="ph" style="color:var(--muted);font-size:13.5px;text-align:center;padding:32px 10px">命中标准时，这里显示原文条款与相似度。</div>';
+    $("ans-meta").textContent = ""; $("ref-meta").textContent = "";
+    $("hint").textContent = "答案约需 10～60 秒，引用通常 1 秒内先出";
+    $("cat-note").style.display = "none";
+    last = { answer:"", refs:[] };
+  });
+  $("clr-hist").addEventListener("click", function(){
+    try { localStorage.removeItem(HIST_KEY); } catch(e){}
+    drawHist(); toast("已清除查询历史");
+  });
+  $("q").addEventListener("keydown", function(e){
+    if (e.key === "Enter" && !e.shiftKey){ e.preventDefault(); ask(); }
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".samp"), function(el){
+    el.addEventListener("click", function(){ $("q").value = el.textContent; ask(); });
+  });
+
+  refreshStatus();
+  drawHist();
+  $("q").focus();
+})();
+</script>
+</body>
+</html>

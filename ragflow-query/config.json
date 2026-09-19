@@ -1,0 +1,39 @@
+{
+  "app_name": "电子取证标准查询",
+  "host": "127.0.0.1",
+  "port": 8899,
+
+  "base_url": "http://127.0.0.1:8081/api/v1",
+  "chat_id": "92eef474ad7911f19a10cdbdbac4bbbc",
+  "dataset_ids": [
+    "8baeefaeac4611f1aa6f8359b03fb8ce",
+    "1e96bd2aadd611f19c1d47fabda44d24"
+  ],
+  "dataset_labels": {
+    "8baeefaeac4611f1aa6f8359b03fb8ce": "正文库",
+    "1e96bd2aadd611f19c1d47fabda44d24": "目录库"
+  },
+  "dataset_notes": {
+    "8baeefaeac4611f1aa6f8359b03fb8ce": "标准正文全文，可给出条款号",
+    "1e96bd2aadd611f19c1d47fabda44d24": "标准目录元数据，仅供查状态与替代关系"
+  },
+
+  "token": "",
+  "token_env": "RAGFLOW_API_TOKEN",
+
+  "retrieval": {
+    "page_size": 8,
+    "similarity_threshold": 0.1,
+    "vector_similarity_weight": 0.3,
+    "top_k": 1024
+  },
+
+  "mysql": {
+    "docker_exe": "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+    "container": "docker-mysql-1"
+  },
+
+  "chat_timeout": 300,
+  "retrieval_timeout": 120,
+  "status_timeout": 10
+}
