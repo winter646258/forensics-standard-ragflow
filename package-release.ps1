@@ -29,11 +29,20 @@ $zipPath = Join-Path $OutputDirectory "$packageName.zip"
 # 只取已跟踪文件：标准正文与凭据都在 .gitignore 中，不会进入发行包。
 Push-Location $root
 try {
-    $tracked = & git -c core.quotepath=false ls-files
-    if ($LASTEXITCODE -ne 0) { throw 'git ls-files 失败，请在仓库根目录执行。' }
+    # git 把文件名按 UTF-8 输出，而 PowerShell 5.1 默认用控制台代码页解码，
+    # 中文文件名会变成乱码，后续 Copy-Item 便找不到文件。显式声明 UTF-8。
+    $consoleEncoding = [Console]::OutputEncoding
+    [Console]::OutputEncoding = New-Object Text.UTF8Encoding $false
+    try {
+        $tracked = & git -c core.quotepath=false ls-files
+        if ($LASTEXITCODE -ne 0) { throw 'git ls-files 失败，请在仓库根目录执行。' }
+    } finally {
+        [Console]::OutputEncoding = $consoleEncoding
+    }
 } finally {
     Pop-Location
 }
+$tracked = @($tracked | Where-Object { $_ -and $_.Trim() })
 if (-not $tracked) { throw '没有可打包的文件。' }
 
 # 出于安全考虑，明确拒绝任何疑似正文或凭据的路径。
